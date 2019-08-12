@@ -6,11 +6,11 @@
         <div class="logo">
             <a href="#" class="simple-text logo-mini">
                 <div class="logo-image-small">
-                    <!--<img src="{{asset('assets/images/logo-small.png')}}">-->
+                    <img :src="'assets/images/'+logo">
                 </div>
             </a>
             <a href="#" class="simple-text logo-normal">
-                Vinnyvinny
+                Vinnysoft solutions
                 <!-- <div class="logo-image-big">
                   <img src="../assets/img/logo-big.png">
                 </div> -->
@@ -26,14 +26,7 @@
                        </a>
                    </router-link>
                 </li>
-                <li class="active ">
-                    <router-link to="/categories">
-                        <a>
-                            <i class="nc-icon nc-bank"></i>
-                            <p>Categories</p>
-                        </a>
-                    </router-link>
-                </li>
+
                 <li>
                     <router-link to="/products">
                         <a>
@@ -47,6 +40,22 @@
                         <a>
                             <i class="nc-icon nc-diamond"></i>
                             <p>Inventory</p>
+                        </a>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/pos">
+                        <a>
+                            <i class="nc-icon nc-diamond"></i>
+                            <p>Purchase Order</p>
+                        </a>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/petty-cash">
+                        <a>
+                            <i class="nc-icon nc-diamond"></i>
+                            <p>Petty Cash</p>
                         </a>
                     </router-link>
                 </li>
@@ -67,14 +76,15 @@
 </template>
 
 <script>
-    import Products from "../Products";
-    import Categories from "../Categories";
+    import Products from "../products/Products";
+    import Categories from "../categories/Categories";
     import Dashboard from "./Dashboard";
 
     export default {
         data(){
           return {
-              selectedComp:'app-dashboard'
+              selectedComp:'app-dashboard',
+              logo:'logo-small.png'
           }
         },
         components:{

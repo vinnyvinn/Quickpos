@@ -11,7 +11,7 @@
                             <div class="col-sm-3" v-for="dish in dishes">
                                 <strong>{{dish.name}}</strong>
                                 <p class="item_pic"> <img :src="'/assets/images/'+item" alt=""></p>
-                                <button class="btn btn-info order">Order Now</button>
+                                <button class="btn btn-info order" @click="addProductToCart(dish,1)">Order Now</button>
 
                             </div>
                         </div>
@@ -35,10 +35,16 @@
         },
            methods:{
             getSpecial(){
-                axios.get('http://localhost:8000/api/specials')
+                axios.get('specials')
                     .then(res => this.dishes = res.data)
                     .catch(error => error.response)
-            }
+            },
+               addProductToCart(product,quantity){
+                   this.$store.dispatch('addProductToCart',{
+                       product:product,
+                       quantity:quantity
+                   }).then(res => console.log('success'));
+               },
         }
     }
 </script>

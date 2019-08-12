@@ -14,7 +14,7 @@ class PurchaseOrderController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(PurchaseOrder::all());
     }
 
     /**
@@ -35,7 +35,8 @@ class PurchaseOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        PurchaseOrder::create($request->all());
+        return response('success');
     }
 
     /**
@@ -44,9 +45,9 @@ class PurchaseOrderController extends Controller
      * @param  \App\PurchaseOrder  $purchaseOrder
      * @return \Illuminate\Http\Response
      */
-    public function show(PurchaseOrder $purchaseOrder)
+    public function show($id)
     {
-        //
+       return response()->json( PurchaseOrder::find($id));
     }
 
     /**
@@ -67,9 +68,10 @@ class PurchaseOrderController extends Controller
      * @param  \App\PurchaseOrder  $purchaseOrder
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PurchaseOrder $purchaseOrder)
+    public function update(Request $request)
     {
-        //
+        PurchaseOrder::find($request->id)->update($request->all());
+        return response('success');
     }
 
     /**

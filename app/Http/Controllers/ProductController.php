@@ -40,15 +40,19 @@ class ProductController extends Controller
         return response('success');
     }
 
+    public function show($id)
+    {
+        return response()->json(Product::find($id));
+}
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Product $product,Request $request)
     {
-        return view('products.edit')->with('product',$product);
+
     }
 
     /**
@@ -60,8 +64,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
-        return redirect()->back();
+
+        Product::find($request->id)->update($request->all());
+        return response('success');
     }
 
     /**
@@ -70,9 +75,9 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Request $request)
     {
-        $product->delete();
-        return redirect()->back();
+        Product::find($request->id)->delete();
+        return response('success');
     }
 }

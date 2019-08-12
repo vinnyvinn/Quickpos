@@ -4,7 +4,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Main Dish({{total}})--({{cartItems}}--({{totalQ}})</h4>
+                        <h4 class="card-title">Main Dish</h4>
 
                     </div>
                     <div class="card-body">
@@ -59,7 +59,7 @@
     },
         methods:{
             getDishes(){
-             axios.get('http://localhost:8000/api/dishes')
+             axios.get('dishes')
                  .then(res => this.dishes = res.data)
                 .catch(error => error.response)
             },
@@ -76,6 +76,8 @@
 <style>
 .order{
     margin-top: 0;
+    font-weight: bold;
+    font-size: 12px;
 }
     .item_pic{
         margin: 1px;

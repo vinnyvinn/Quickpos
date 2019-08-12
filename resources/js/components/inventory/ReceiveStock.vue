@@ -45,12 +45,12 @@
         },
         methods:{
             receiveStock(){
-             axios.post('http://localhost:8000/api/inventory',this.form)
+             axios.post('inventory',this.form)
                  .then(res => this.$router.push('/inventory'))
                  .catch(error => console.log(error.response))
             },
             getProducts(){
-                axios.get('http://localhost:8000/api/products')
+                axios.get('products')
                     .then(res => this.products = res.data)
                     .catch(error => error.response)
             }

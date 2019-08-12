@@ -64,6 +64,7 @@
               amount:'',
               show_balance:false
           }
+
         },
    computed:{
        ...mapGetters(['cartItems','orderedItems','cartTotal']),
@@ -99,9 +100,8 @@
                 });
             },
             checkout(){
-            this.$router.push('/print-receipt');
-               // axios.get('http://localhost:8000/api/orders')
-            }
+              this.$router.push('/print-receipt');
+                     }
         }
     }
 </script>

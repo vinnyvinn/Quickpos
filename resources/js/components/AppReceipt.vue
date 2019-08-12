@@ -60,7 +60,8 @@
     export default {
         data(){
             return {
-                logo:'logo1.png'
+                logo:'logo1.png',
+                items:[]
             }
         },
         computed:{
@@ -78,8 +79,17 @@
       methods:{
           generateReceipt(){
               this.$htmlToPaper('invoice-POS', () => {
-                  this.$router.push('/sale');
-              });
+                  this.orderedItems.forEach(item => {
+                      this.items.push({
+                          product_id:item.product.id,
+                          total:item.product.price * item.quantity,
+                          quantity:item.quantity
+                      });
+                  });
+                  axios.post('orders',this.items)
+                  .then(() => this.$store.dispatch('clearCart'))
+                  .then(res => this.$router.push('/sale'));
+                        });
           }
       }
     }

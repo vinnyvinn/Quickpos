@@ -14,10 +14,13 @@ import { ClientTable } from 'vue-tables-2';
 import Vuex from 'vuex';
 import Print from 'vue-print-nb'
 
+
+
 Vue.use(Print);
 
 Vue.use(ClientTable);
 Vue.use(Vuex);
+axios.defaults.baseURL ='http://localhost:8000/api/'
 import router from "./routes/router";
 /**
  * The following block of code may be used to automatically register your
@@ -56,9 +59,9 @@ const options = {
         'scrollbars=yes'
     ],
     styles: [
-        'http://localhost:8000/assets/css/bootstrap.min.css',
-        'http://localhost:8000/assets/css/kidlat.css',
-        'http://localhost:8000/assets/css/print.scss'
+        '/assets/css/bootstrap.min.css',
+        '/assets/css/kidlat.css',
+        '/assets/css/print.scss'
     ]
 };
 Vue.use(VueHtmlToPaper, options);

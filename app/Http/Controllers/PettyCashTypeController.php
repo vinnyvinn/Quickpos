@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
+use App\PettyCashType;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class PettyCashTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-     return view('orders.index');
+        return response()->json(PettyCashType::all());
     }
 
     /**
@@ -35,35 +35,28 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-       foreach ($request->all() as $item){
-              Order::create([
-              'product_id' => $item['product_id'],
-               'quantity' => $item['quantity'],
-               'total' => $item['total']
-           ]);
-       }
-
+        PettyCashType::create($request->all());
         return response('success');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param  \App\PettyCashType  $pettyCashType
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        //
+      return response()->json(PettyCashType::find($id));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param  \App\PettyCashType  $pettyCashType
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit(PettyCashType $pettyCashType)
     {
         //
     }
@@ -72,21 +65,22 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
+     * @param  \App\PettyCashType  $pettyCashType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, PettyCashType $pettyCashType)
     {
-        //
+        PettyCashType::find($request->id)->update($request->all());
+        return response('updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Order  $order
+     * @param  \App\PettyCashType  $pettyCashType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(PettyCashType $pettyCashType)
     {
         //
     }

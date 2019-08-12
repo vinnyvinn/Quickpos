@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -46,9 +47,9 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        return response()->json(Category::find($id));
     }
 
     /**
@@ -69,10 +70,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request)
     {
-        $category->update($request->all());
-        return  redirect()->back();
+        Category::find($request->id)->update($request->all());
+        return  response('success');
     }
 
     /**
@@ -81,9 +82,9 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Request $request)
     {
-        $category->delete();
-        return redirect()->back();
+        Category::find($request->id)->delete();
+        return response('deleted');
     }
 }

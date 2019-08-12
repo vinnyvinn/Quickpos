@@ -12,6 +12,7 @@
     <!-- CSS Files -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/paper-dashboard.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('assets/css/demo.css')}}" rel="stylesheet" />
     <!-- Styles -->
@@ -24,7 +25,7 @@
     <script src="{{asset('assets/js/core/popper.min.js')}}"></script>
     <script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
-
+    <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <!-- Chart JS -->
     <script src="{{asset('assets/js/plugins/chartjs.min.js')}}"></script>
     <!--  Notifications Plugin    -->

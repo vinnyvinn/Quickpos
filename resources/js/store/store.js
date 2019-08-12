@@ -61,6 +61,9 @@ export default new Vuex.Store({
       },
        paid(state,amount){
         state.amountPaid = amount;
+       },
+       emptyCart(state){
+          state.cart.items = [];
        }
    },
    actions:{
@@ -87,6 +90,9 @@ export default new Vuex.Store({
         let balance = amount - getters.cartTotal;
           commit('balanceAmount',balance);
           commit('paid',amount);
+       },
+       clearCart({commit}){
+        commit('emptyCart');
        }
    }
 })

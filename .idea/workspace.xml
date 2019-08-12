@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="801b1eee-c859-4021-ba38-bcfd25e36853" name="Default Changelist" comment="" />
+    <list default="true" id="801b1eee-c859-4021-ba38-bcfd25e36853" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/products/Products.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PurchaseOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PurchaseOrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PurchaseOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PurchaseOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_08_201947_create_purchase_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_08_201947_create_purchase_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AddCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/categories/AddCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/AddProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AppInventory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/inventory/AppInventory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AppReceipt.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AppReceipt.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/categories/Categories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Products.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ReceiveStock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/inventory/ReceiveStock.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ViewOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ViewOrder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Drinks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Drinks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Fruits.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Fruits.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/MainDish.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/MainDish.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Snacks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Snacks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Specials.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Specials.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layout/AppSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layout/AppSidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +50,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="CSS File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -110,7 +145,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1P7wh5252aUMSQnbE6fVv8Pr2JE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tutorials/vue-vuex" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -119,6 +156,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/components" />
+      <recent name="$PROJECT_DIR$/resources/js/components/inventory" />
+      <recent name="$PROJECT_DIR$/resources/js/components/categories" />
+      <recent name="$PROJECT_DIR$/resources/js/components/products" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/public/assets/js" />
@@ -167,11 +210,37 @@
       <workItem from="1565368568674" duration="5481000" />
       <workItem from="1565413006847" duration="4889000" />
       <workItem from="1565418697074" duration="3457000" />
-      <workItem from="1565425118727" duration="1464000" />
+      <workItem from="1565425118727" duration="14907000" />
+      <workItem from="1565441797186" duration="10687000" />
+      <workItem from="1565584411987" duration="17910000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/products/Edit.vue</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
