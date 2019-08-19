@@ -23,6 +23,12 @@ import EditTypes from "../components/pettycash/types/Edit";
 import AddTypes from "../components/pettycash/types/AddNew";
 import BaseIndex from "../components/pettycash/BaseIndex";
 import BaseIndexProducts from "../components/products/BaseIndex";
+import Reports from "../components/reports/Index";
+import salesReport from "../components/reports/sales/Index";
+import pettyCashReport from "../components/reports/pettycash/Index";
+import poReport from "../components/reports/po/Index";
+
+
 
 Vue.use(VueRouter);
 
@@ -48,6 +54,10 @@ const routes = [
     {path:'/types',component:Types},
     {path:'/type-edit/:id/edit',component:EditTypes,name:'type-edit'},
     {path:'/add-type',component:AddTypes},
+    {path:'/reports',component:Reports},
+    {path:'/sales-reports',component:salesReport},
+    {path:'/petty-cash-reports',component:pettyCashReport},
+    {path:'/po-reports',component:poReport},
     {path:'*',redirect:'/sale'},
 
 ];

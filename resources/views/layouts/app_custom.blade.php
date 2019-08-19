@@ -35,7 +35,7 @@
     <script src="{{asset('assets/js/plugins/chartjs.min.js')}}"></script>
     <!--  Notifications Plugin    -->
     <script src="{{asset('assets/js/plugins/bootstrap-notify.js')}}"></script>
-      <script src="{{asset('assets/js/paper-dashboard.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('assets/js/paper-dashboard.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/demo.js')}}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -44,8 +44,8 @@
 </head>
 <body>
 <div id="app">
-<div class="wrapper">
-    <app-home></app-home>
+    <div class="wrapper">
+        <app-home></app-home>
     </div>
 
 </div>
@@ -53,12 +53,12 @@
 <style>
 
 </style>
-    <script>
-        $(function () {
-            demo.initChartsPages();
-        })
+<script>
+    $(function () {
+        demo.initChartsPages();
+    })
 
-    </script>
+</script>
 
 </body>
 </html>

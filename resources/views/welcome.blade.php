@@ -13,6 +13,7 @@
     </head>
     <body>
        <div id="app">
+           <h1>Welcome All</h1>
           <app-home></app-home>
        </div>
        <script src="{{asset('js/app.js')}}"></script>

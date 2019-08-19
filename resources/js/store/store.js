@@ -9,7 +9,10 @@ export default new Vuex.Store({
         },
         cartItems:0,
         balance:0,
-        amountPaid:0
+        amountPaid:0,
+        sales:[],
+        petty_cash:[],
+        pos:[]
     },
     getters:{
         getCartItem:(state) => (product) =>{
@@ -39,7 +42,7 @@ export default new Vuex.Store({
         },
         orderedItems(state){
             return state.cart.items;
-        }
+        },
     },
    mutations:{
        addProductToCart:(state,payload) => {
@@ -64,6 +67,15 @@ export default new Vuex.Store({
        },
        emptyCart(state){
           state.cart.items = [];
+       },
+       salesReport(state,sales){
+           state.sales = sales;
+       },
+       pettyCash(state,data){
+          state.petty_cash = data;
+       },
+       po(state,data){
+           state.pos = data;
        }
    },
    actions:{
@@ -93,6 +105,16 @@ export default new Vuex.Store({
        },
        clearCart({commit}){
         commit('emptyCart');
+       },
+       totalSales({commit},data){
+
+        commit('salesReport',data.sales);
+       },
+       pettyCash({commit},data){
+        commit('pettyCash',data.petty_cash)
+       },
+       poReports({commit},data){
+        commit('po',data.po)
        }
    }
 })

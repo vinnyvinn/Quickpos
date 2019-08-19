@@ -13,6 +13,11 @@ window.axios= require('axios');
 import { ClientTable } from 'vue-tables-2';
 import Vuex from 'vuex';
 import Print from 'vue-print-nb'
+import excel from 'vue-excel-export'
+import JsonExcel from 'vue-json-excel'
+
+Vue.component('downloadExcel', JsonExcel)
+Vue.use(excel)
 
 
 

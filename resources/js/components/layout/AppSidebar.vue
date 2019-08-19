@@ -67,6 +67,14 @@
                         </a>
                     </router-link>
                 </li>
+                <li>
+                    <router-link to="/reports">
+                        <a>
+                            <i class="nc-icon nc-diamond"></i>
+                            <p>Reports</p>
+                        </a>
+                    </router-link>
+                </li>
 
             </ul>
         </div>
