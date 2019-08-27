@@ -62,9 +62,10 @@
     import { mapGetters } from 'vuex';
 
     export default {
-         computed:{
+          computed:{
              ...mapGetters(['cartItems'])
          },
+
         components:{
             'main-dish':MainDish,
             'app-fruits':Fruits,

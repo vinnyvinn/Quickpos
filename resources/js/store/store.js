@@ -12,7 +12,8 @@ export default new Vuex.Store({
         amountPaid:0,
         sales:[],
         petty_cash:[],
-        pos:[]
+        pos:[],
+        path_to:'/'
     },
     getters:{
         getCartItem:(state) => (product) =>{
@@ -76,6 +77,9 @@ export default new Vuex.Store({
        },
        po(state,data){
            state.pos = data;
+       },
+       pathTo(state,to){
+       state.path_to = to;
        }
    },
    actions:{
@@ -115,6 +119,9 @@ export default new Vuex.Store({
        },
        poReports({commit},data){
         commit('po',data.po)
+       },
+       pathTo({commit},to){
+         commit('pathTo',to);
        }
    }
 })

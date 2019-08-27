@@ -99,7 +99,10 @@
             'app-products':Products,
             'app-categories':Categories,
             'app-dashboard':Dashboard
-        }
+        },
+        created(){
+            console.log('yttttttttt');
+        },
     }
 </script>
 

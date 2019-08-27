@@ -27,37 +27,49 @@ import Reports from "../components/reports/Index";
 import salesReport from "../components/reports/sales/Index";
 import pettyCashReport from "../components/reports/pettycash/Index";
 import poReport from "../components/reports/po/Index";
+import Signup from "../components/auth/Signup";
+import Login from "../components/auth/Login";
+import User from "../Helpers/User";
 
 
 
 Vue.use(VueRouter);
 
+function guard(to, from, next){
+    if(User.loggedIn()) {
+      next();
+    } else{
+        next('/login');
+    }
+}
 const routes = [
-    {path:'/products',component:BaseIndexProducts},
-    {path:'/products/:id/edit',component:Edit,name:'product-edit'},
-    {path:'/categories',component:Categories},
-    {path:'/category/:id/edit',component:EditCategory,name:'category-edit'},
-    {path:'/dashboard',component:Dashboard},
-    {path:'/add-category',component:AddCategory},
-    {path:'/add-product',component:AddProduct},
-    {path:'/sale',component:AppSale},
-    {path:'/inventory',component:AppInventory},
-    {path:'/receive-stock',component:ReceiveStock},
-    {path:'/order-details',component:ViewOrder},
-    {path:'/print-receipt',component:AppReceipt},
-    {path:'/pos',component:PurchaseOrder},
-    {path:'/add-po',component:AddPurchaseOrder},
-    {path:'/edit-po',component:EditPurchaseOrder,name:'po-edit'},
-    {path:'/petty-cash',component:BaseIndex},
-    {path:'/add-petty-cash',component:AddNew},
-    {path:'/petty-cash-edit/:id/edit',component:EditPettyCash,name:'petty-cash-edit'},
-    {path:'/types',component:Types},
-    {path:'/type-edit/:id/edit',component:EditTypes,name:'type-edit'},
-    {path:'/add-type',component:AddTypes},
-    {path:'/reports',component:Reports},
-    {path:'/sales-reports',component:salesReport},
-    {path:'/petty-cash-reports',component:pettyCashReport},
-    {path:'/po-reports',component:poReport},
+    {path:'/login',component:Login},
+    {path:'/signup',component:Signup},
+    {path:'/products',component:BaseIndexProducts,beforeEnter:guard},
+    {path:'/products/:id/edit',component:Edit,name:'product-edit',beforeEnter:guard},
+    {path:'/categories',component:Categories,beforeEnter:guard},
+    {path:'/category/:id/edit',component:EditCategory,name:'category-edit',beforeEnter:guard},
+    {path:'/dashboard',component:Dashboard,beforeEnter:guard},
+    {path:'/add-category',component:AddCategory,beforeEnter:guard},
+    {path:'/add-product',component:AddProduct,beforeEnter:guard},
+    {path:'/sale',component:AppSale,beforeEnter:guard},
+    {path:'/inventory',component:AppInventory,beforeEnter:guard},
+    {path:'/receive-stock',component:ReceiveStock,beforeEnter:guard},
+    {path:'/order-details',component:ViewOrder,beforeEnter:guard},
+    {path:'/print-receipt',component:AppReceipt,beforeEnter:guard},
+    {path:'/pos',component:PurchaseOrder,beforeEnter:guard},
+    {path:'/add-po',component:AddPurchaseOrder,beforeEnter:guard},
+    {path:'/edit-po',component:EditPurchaseOrder,name:'po-edit',beforeEnter:guard},
+    {path:'/petty-cash',component:BaseIndex,beforeEnter:guard},
+    {path:'/add-petty-cash',component:AddNew,beforeEnter:guard},
+    {path:'/petty-cash-edit/:id/edit',component:EditPettyCash,name:'petty-cash-edit',beforeEnter:guard},
+    {path:'/types',component:Types,beforeEnter:guard},
+    {path:'/type-edit/:id/edit',component:EditTypes,name:'type-edit',beforeEnter:guard},
+    {path:'/add-type',component:AddTypes,beforeEnter:guard},
+    {path:'/reports',component:Reports,beforeEnter:guard},
+    {path:'/sales-reports',component:salesReport,beforeEnter:guard},
+    {path:'/petty-cash-reports',component:pettyCashReport,beforeEnter:guard},
+    {path:'/po-reports',component:poReport,beforeEnter:guard},
     {path:'*',redirect:'/sale'},
 
 ];

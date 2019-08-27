@@ -25,8 +25,20 @@ Vue.use(Print);
 
 Vue.use(ClientTable);
 Vue.use(Vuex);
+
 axios.defaults.baseURL ='http://localhost:8000/api/'
 import router from "./routes/router";
+
+
+import User from './Helpers/User';
+window.User = User;
+
+router.beforeEach((to, from, next) => {
+   store.dispatch('pathTo',to.path);
+   next();
+})
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -71,6 +83,8 @@ const options = {
 };
 Vue.use(VueHtmlToPaper, options);
 
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -80,5 +94,6 @@ Vue.use(VueHtmlToPaper, options);
 const app = new Vue({
     el: '#app',
     router,
-    store:store
+    store:store,
+
 });
