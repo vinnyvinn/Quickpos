@@ -4,31 +4,21 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import store from "./store/store";
-
-
+import V from 'vue';
 //require('./bootstrap');
-
 window.Vue = require('vue');
+window.wallaTest = new V();
 window.axios= require('axios');
-import { ClientTable } from 'vue-tables-2';
 import Vuex from 'vuex';
-import Print from 'vue-print-nb'
-import excel from 'vue-excel-export'
 import JsonExcel from 'vue-json-excel'
 
 Vue.component('downloadExcel', JsonExcel)
-Vue.use(excel)
+import VueToastr from 'vue-toastr';
+ Vue.use(VueToastr);
 
-
-
-Vue.use(Print);
-
-Vue.use(ClientTable);
 Vue.use(Vuex);
-
 axios.defaults.baseURL ='http://localhost:8000/api/'
 import router from "./routes/router";
-
 
 import User from './Helpers/User';
 window.User = User;
@@ -36,8 +26,9 @@ window.User = User;
 router.beforeEach((to, from, next) => {
    store.dispatch('pathTo',to.path);
    next();
-})
+});
 
+window.eventBus = new Vue();
 
 /**
  * The following block of code may be used to automatically register your
@@ -55,6 +46,7 @@ Vue.component('app-sidebar', require('./components/layout/AppSidebar').default);
 Vue.component('dashboard', require('./components/layout/Dashboard').default);
 Vue.component('app-home', require('./components/layout/AppHome').default);
 Vue.component('app-header', require('./components/layout/AppHeader').default);
+
 
 
 Vue.filter('currency', function(value) {
@@ -95,5 +87,6 @@ const app = new Vue({
     el: '#app',
     router,
     store:store,
+
 
 });

@@ -4,7 +4,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Menu
+                            <h4 class="card-title">Menu
                             <button class="btn btn-primary float-right" @click="viewCart"><i class="fa fa-eye"></i>View Order({{cartItems}})</button>
                         </h4>
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -58,12 +58,12 @@
     import Specials from "./dishes/Specials";
     import Snacks from "./dishes/Snacks";
     import Drinks from "./dishes/Drinks";
-
     import { mapGetters } from 'vuex';
 
     export default {
           computed:{
              ...mapGetters(['cartItems'])
+
          },
 
         components:{
@@ -73,12 +73,17 @@
             'app-snacks':Snacks,
             'app-drinks':Drinks
         },
+        created(){
+           eventBus.$on('notify',()=>{
+               this.$toastr.e("Sorry you do not have enough stock for the selected product");
+           })
+           },
         methods:{
             viewCart(){
             this.$router.push('/order-details')
 
-            }
-        }
+            },
+           }
     }
 </script>
 

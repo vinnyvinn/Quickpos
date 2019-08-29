@@ -78,6 +78,7 @@
         },
       methods:{
           generateReceipt(){
+
               this.$htmlToPaper('invoice-POS', () => {
                   this.orderedItems.forEach(item => {
                       this.items.push({
@@ -85,7 +86,9 @@
                           total:item.product.price * item.quantity,
                           quantity:item.quantity
                       });
+
                   });
+
                   axios.post('orders',this.items)
                   .then(() => this.$store.dispatch('clearCart'))
                   .then(res => this.$router.push('/sale'));

@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Register</div>
+                    <div class="card-header text-center register">Register</div>
                     <div class="card-body">
                         <form @submit.prevent="register">
                             <div class="form-group row">
@@ -37,7 +37,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                         </form>
                     </div>
                 </div>
             </div>
@@ -67,5 +67,12 @@
 </script>
 
 <style scoped>
-
+.register{
+    font-weight: 900;
+}
+.reg{
+    margin-top: -65px;
+    margin-right: 45px;
+    color: dodgerblue;
+}
 </style>

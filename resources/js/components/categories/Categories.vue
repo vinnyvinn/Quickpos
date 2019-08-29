@@ -4,13 +4,15 @@
             <div class="col-sm-12">
          <div class="card">
      <div class="card-header">
-         <h4 class="card-title">Categories</h4>
-         <button class="btn btn-primary" @click="addCategory">Add Category</button>
-     </div>
+         <h4 class="card-title" v-if="!add_category">Categories</h4>
+         <button class="btn btn-primary" @click="addCategory" v-if="!add_category">Add Category</button>
+           </div>
              <div class="card-body">
+                 <add-category v-if="add_category" :edit="editing"></add-category>
+             <div v-if="!add_category">
                  <table class="table table-striped walla">
                      <thead>
-                     <tr>
+                         <tr>
                          <th>#</th>
                          <th>Name</th>
                          <th>Action</th>
@@ -20,36 +22,36 @@
                  <tr v-for="category in tableData">
                      <td>{{category.id}}</td>
                      <td>{{category.name}}</td>
-                     <td>
-                         <router-link :to="{name:'category-edit',params:{id:category.id}}">
-                             <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
-                         </router-link>
+                        <td>
+                         <button class="btn btn-info btn-sm" @click="editMode(category)"><i class="fa fa-edit" aria-hidden="true"></i></button>
                          <button class="btn btn-danger btn-sm" @click="deleteCategory(category.id)"><i class="fa fa-trash"></i></button>
                      </td>
                  </tr>
                  </tbody>
-
                  </table>
+             </div>
              </div>
          </div>
         </div>
     </div>
     </div>
-
 </template>
-
 <script>
+    import AddCategory from "./AddCategory";
     export default {
         data() {
             return {
-              tableData: [],
-               }
+                tableData: [],
+                add_category:false,
+                editing:false
+                 }
         },
         created() {
+            this.listen();
            this.getCategories();
         },
         mounted(){
-            this.initDatatable();
+           this.initDatatable();
         },
         methods:{
             getCategories(){
@@ -57,21 +59,52 @@
                     .then(res => this.tableData = res.data)
                     .catch(error => console.log(error.response))
             },
-            addCategory(){
-                this.$router.push('/add-category');
-            },
             deleteCategory(id){
-              axios.post('delete-category',{id:id})
-                  .then(res => this.$router.go())
+              axios.delete(`categories/${id}`)
+                  .then(res => {
+                      for (let i=0;i<this.tableData.length;i++){
+                          if (this.tableData[i].id == res.data){
+                              this.tableData.splice(i,1);
+                          }
+                      }
+                  })
                   .catch(error => error.response)
             },
             initDatatable(){
                 setTimeout(()=>{
-                    $('.walla').DataTable();
+                  $('.walla').DataTable();
                 },300)
-            }
-        }
+            },
+            listen(){
+                eventBus.$on('listCategories',(category)=>{
+                   this.add_category =false;
+                   this.tableData.unshift(category);
+                  });
 
+                eventBus.$on('allCategories',()=>{
+                this.add_category = false;
+                 })
+            },
+            addCategory(){
+                this.add_category = true;
+                this.editing = false;
+            },
+            editMode(category){
+               for (let i=0;i<this.tableData.length;i++){
+                   if (this.tableData[i].id == category.id){
+                      this.tableData.splice(i,1);
+                   }
+               }
+               this.$store.dispatch('updateCategory',category)
+                   .then(()=> {
+                       this.add_category = true;
+                       this.editing = true;
+                   });
+            },
+        },
+        components:{
+            AddCategory
+        }
     }
 </script>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -41,8 +42,8 @@ class OrderController extends Controller
                'quantity' => $item['quantity'],
                'total' => $item['total']
            ]);
+          Product::where('id',$item['product_id'])->decrement('quantity',$item['quantity']);
        }
-
         return response('success');
     }
 

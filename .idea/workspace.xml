@@ -2,23 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="801b1eee-c859-4021-ba38-bcfd25e36853" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pos.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InventoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AppReceipt.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AppReceipt.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/AppSale.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AppSale.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/layout/AppHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layout/AppHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ViewOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ViewOrder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/auth/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/auth/Signup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/auth/Signup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/categories/AddCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/categories/AddCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/categories/Categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/categories/Categories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/categories/EditCategory.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Drinks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Drinks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Fruits.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Fruits.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/MainDish.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/MainDish.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Snacks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Snacks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Specials.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Specials.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/layout/AppHome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layout/AppHome.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/layout/AppSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layout/AppSidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/products/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/AddProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/products/Products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/Products.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,12 +43,26 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -154,19 +178,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/js/components/reports/po" />
-      <recent name="$PROJECT_DIR$/resources/js/components/reports/pettycash" />
-      <recent name="$PROJECT_DIR$/resources/js/components/reports/sales" />
-      <recent name="$PROJECT_DIR$/public/assets/css" />
-      <recent name="$PROJECT_DIR$/resources/js/components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/images" />
       <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/public/assets/js" />
       <recent name="$PROJECT_DIR$/public/assets/css" />
       <recent name="$PROJECT_DIR$/public/assets/fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/fonts" />
+      <recent name="$PROJECT_DIR$/public/assets/css" />
+      <recent name="$PROJECT_DIR$/resources/js/components/reports/po" />
+      <recent name="$PROJECT_DIR$/resources/js/components/reports/pettycash" />
+      <recent name="$PROJECT_DIR$/resources/js/components/reports/sales" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -227,7 +251,14 @@
       <workItem from="1566817198858" duration="15536000" />
       <workItem from="1566884548321" duration="1874000" />
       <workItem from="1566893316577" duration="2083000" />
-      <workItem from="1566896996632" duration="5682000" />
+      <workItem from="1566896996632" duration="9626000" />
+      <workItem from="1566910596119" duration="1299000" />
+      <workItem from="1566965706934" duration="588000" />
+      <workItem from="1566969720470" duration="21778000" />
+      <workItem from="1567000917158" duration="4961000" />
+      <workItem from="1567053302195" duration="7155000" />
+      <workItem from="1567062556550" duration="12736000" />
+      <workItem from="1567076886404" duration="15889000" />
     </task>
     <servers />
   </component>
@@ -254,6 +285,11 @@
           <url>file://$PROJECT_DIR$/resources/js/components/products/Edit.vue</url>
           <line>10</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/auth/Login.vue</url>
+          <line>10</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -18,11 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('categories','CategoryController');
-Route::post('update-category','CategoryController@update');
-Route::post('delete-category','CategoryController@destroy');
 Route::apiResource('products','ProductController');
-Route::post('update-product','ProductController@update');
-Route::post('delete-product','ProductController@destroy');
 Route::get('dishes','ProductController@dishes');
 Route::get('/dishes','DishesController@index');
 Route::get('/drinks','DishesController@drinks');
@@ -30,6 +26,7 @@ Route::get('/fruits','DishesController@fruits');
 Route::get('/snacks','DishesController@snacks');
 Route::get('/specials','DishesController@specials');
 Route::apiResource('inventory','InventoryController');
+Route::post('update-inventory','ProductController@update');
 Route::apiResource('orders','OrderController');
 Route::apiResource('purchases','PurchaseOrderController');
 Route::apiResource('petty-cash','PettyCashController');

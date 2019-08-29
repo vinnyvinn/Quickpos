@@ -94,14 +94,14 @@
                 });
             },
             decreaseQuantity(item){
-                this.$store.dispatch('updateCart',{
+                this.$store.dispatch('updateCartDec',{
                     product:item,
                     quantity:-1
                 });
             },
             checkout(){
               this.$router.push('/print-receipt');
-                     }
+                  }
         }
     }
 </script>

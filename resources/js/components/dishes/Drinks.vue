@@ -31,7 +31,9 @@
                 item:'item.png'
             }
         },
+
         created(){
+
             this.getDishes();
         },
         methods:{
@@ -43,7 +45,8 @@
             addProductToCart(product,quantity){
                 this.$store.dispatch('addProductToCart',{
                     product:product,
-                    quantity:quantity
+                    quantity:quantity,
+                    available_qty:product.quantity
                 }).then(res => console.log('success'));
             },
         }

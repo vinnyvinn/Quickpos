@@ -17,9 +17,6 @@ class InventoryController extends Controller
     {
         return response()->json(Product::all());
     }
-
-
-
     /**
      * Store a newly created resource in storage.
      *
@@ -43,8 +40,6 @@ class InventoryController extends Controller
     {
         //
     }
-
-
     /**
      * Update the specified resource in storage.
      *
@@ -54,9 +49,8 @@ class InventoryController extends Controller
      */
     public function update(Request $request, Inventory $inventory)
     {
-        //
-    }
 
+    }
     /**
      * Remove the specified resource from storage.
      *

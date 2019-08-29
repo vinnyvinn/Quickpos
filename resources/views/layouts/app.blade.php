@@ -8,11 +8,11 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/images/apple-icon.png')}}">
     <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- CSS Files -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/paper-dashboard.css')}}" rel="stylesheet" />
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/jquery.dataTables.min.css')}}">
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('assets/css/demo.css')}}" rel="stylesheet" />
     <!-- Styles -->
@@ -37,16 +37,16 @@
     <script src="{{asset('assets/js/plugins/bootstrap-notify.js')}}"></script>
       <script src="{{asset('assets/js/paper-dashboard.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/demo.js')}}"></script>
+
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="{{asset('assets/fonts/Nunito-font.css')}}" rel="stylesheet">
 
 </head>
 <body>
 <div id="app">
-<div class="wrapper">
+
     <app-home></app-home>
-    </div>
+
 
 </div>
 </div>
