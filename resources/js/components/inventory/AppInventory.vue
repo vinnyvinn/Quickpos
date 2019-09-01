@@ -50,7 +50,7 @@
             getInventory(){
                 axios.get('inventory')
                     .then(res => this.tableData = res.data)
-                    .catch(error => console.log(error.response))
+                    .catch(error => Exception.handle(error))
             },
             receiveSt(){
              this.$router.push('/receive-stock')

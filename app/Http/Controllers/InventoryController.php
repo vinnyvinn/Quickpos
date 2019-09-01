@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT');
+    }
     /**
      * Display a listing of the resource.
      *

@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,15 +24,6 @@ class ProductController extends Controller
         return response()->json(ProductsResource::collection(Product::all()));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-      return view('products.create');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -41,23 +36,6 @@ class ProductController extends Controller
         $product = Product::create($request->all());
         return response()->json(new ProductsResource(Product::find($product->id)));
     }
-
-    public function show($id)
-    {
-        return response()->json(Product::find($id));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Product $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product, Request $request)
-    {
-
-    }
-
     /**
      * Update the specified resource in storage.
      *

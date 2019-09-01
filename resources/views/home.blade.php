@@ -1,8 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-@include('layouts.dashboard')
+    @include('layouts.dashboard')
 
 @endsection
-
-

@@ -2,29 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PettyCashResource;
 use App\PettyCash;
 use Illuminate\Http\Request;
 
 class PettyCashController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct()
     {
-   return response()->json(PettyCash::get()->map(function ($item){
-       return [
-         'name'=> $item->name,
-           'id' => $item->id,
-           'amount' => $item->amount,
-           'type' => $item->type->name
-       ];
-   }));
+        $this->middleware('JWT');
     }
 
-    /**
+    public function index()
+    {
+        return response()->json(PettyCashResource::collection(PettyCash::get()));
+}
+     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -42,20 +35,11 @@ class PettyCashController extends Controller
      */
     public function store(Request $request)
     {
-        PettyCash::create($request->all());
-        return response('success');
+        $petty = PettyCash::create($request->all());
+        return response(new PettyCashResource(PettyCash::find($petty->id)));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\PettyCash  $pettyCash
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return response()->json(PettyCash::find($id));
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -78,7 +62,7 @@ class PettyCashController extends Controller
     public function update(Request $request, PettyCash $pettyCash)
     {
         PettyCash::find($request->id)->update($request->all());
-        return response('success');
+        return response()->json(new PettyCashResource(PettyCash::find($request->id)));
     }
 
     /**

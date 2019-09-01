@@ -3,12 +3,9 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+require('./bootstrap');
 import store from "./store/store";
-import V from 'vue';
-//require('./bootstrap');
 window.Vue = require('vue');
-window.wallaTest = new V();
-window.axios= require('axios');
 import Vuex from 'vuex';
 import JsonExcel from 'vue-json-excel'
 
@@ -22,6 +19,9 @@ import router from "./routes/router";
 
 import User from './Helpers/User';
 window.User = User;
+
+import Exception from "./Helpers/Exception";
+window.Exception = Exception;
 
 router.beforeEach((to, from, next) => {
    store.dispatch('pathTo',to.path);

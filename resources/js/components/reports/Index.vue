@@ -17,7 +17,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="pills-po-tab" data-toggle="pill" href="#pills-po" role="tab" aria-controls="pills-po" aria-selected="false">Purchase Order</a>
                             </li>
-
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-main" role="tabpanel" aria-labelledby="pills-main-tab">
@@ -29,7 +28,6 @@
                             <div class="tab-pane fade" id="pills-po" role="tabpanel" aria-labelledby="pills-po-tab">
                                 <app-purchase-order></app-purchase-order>
                             </div>
-
 
                         </div>
 

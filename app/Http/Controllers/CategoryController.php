@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index','show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,21 +19,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       // return view('categories.index')->with('categories',Category::all());
+
         return response()->json(Category::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('categories.create');
-    }
-
-    /**
+     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -39,28 +33,6 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->all());
         return response($category);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return response()->json(Category::find($id));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
-    {
-        return view('categories.edit')->with('category',$category);
     }
 
     /**

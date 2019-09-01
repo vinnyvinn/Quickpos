@@ -15,7 +15,9 @@ export default new Vuex.Store({
         pos: [],
         path_to: '/',
         category:{},
-        product:{}
+        product:{},
+        petty_cash_type:{},
+        edit_petty_cash:{}
 
     },
     getters: {
@@ -92,6 +94,12 @@ export default new Vuex.Store({
         },
         updateProduct(state,data){
             state.product = data;
+        },
+        pettyCashType(state,data){
+            state.petty_cash_type = data;
+        },
+        pettyCashUpdate(state,data){
+         state.petty_cash = data;
         }
     },
     actions: {
@@ -158,7 +166,13 @@ export default new Vuex.Store({
             commit('updateCategory',data);
         },
         updateProduct({commit},data){
-            commit('updateProduct',data)
+            commit('updateProduct',data);
+        },
+        pettyCashType({commit},data){
+            commit('pettyCashType',data);
+        },
+        pettyCashUpdate({commit},data){
+            commit('pettyCashUpdate',data);
         }
 
     },

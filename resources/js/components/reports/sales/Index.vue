@@ -60,6 +60,7 @@
                     $('.walla').DataTable();
                 },300)
             },
+
         }
     }
 </script>
