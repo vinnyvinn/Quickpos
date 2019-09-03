@@ -10,6 +10,7 @@
                             :data="pettyCash">
                             <i class="fa fa-file-excel-o" aria-hidden="true"></i> Download
                         </download-excel>
+                        <button class="btn btn-outline-danger" @click="back">Back</button>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped walla">
@@ -42,20 +43,29 @@
 
 <script>
     export default {
-        mounted(){
+        mounted() {
+            this.listen();
             this.initDatatable();
         },
-        computed:{
-            pettyCash(){
+        computed: {
+            pettyCash() {
                 return this.$store.state.petty_cash;
             }
         },
-        methods:{
-            initDatatable(){
-                setTimeout(()=>{
+        methods: {
+            initDatatable() {
+                setTimeout(() => {
                     $('.walla').DataTable();
-                },300)
+                }, 300)
             },
+            listen() {
+                eventBus.$on('pettyCashReports', () => {
+
+                })
+            },
+            back() {
+                eventBus.$emit('backToPetty');
+            }
         }
     }
 </script>

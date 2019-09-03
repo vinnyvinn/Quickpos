@@ -30,7 +30,7 @@
                 <li>
                     <router-link to="/products">
                         <a>
-                            <i class="nc-icon nc-diamond"></i>
+                            <i class="nc-icon nc-layout-11"></i>
                             <p>Products</p>
                         </a>
                     </router-link>
@@ -38,7 +38,7 @@
                 <li>
                     <router-link to="/inventory">
                         <a>
-                            <i class="nc-icon nc-diamond"></i>
+                            <i class="nc-icon nc-chart-bar-32"></i>
                             <p>Inventory</p>
                         </a>
                     </router-link>
@@ -46,7 +46,7 @@
                 <li>
                     <router-link to="/pos">
                         <a>
-                            <i class="nc-icon nc-diamond"></i>
+                            <i class="nc-icon nc-air-baloon"></i>
                             <p>Purchase Order</p>
                         </a>
                     </router-link>
@@ -54,7 +54,7 @@
                 <li>
                     <router-link to="/petty-cash">
                         <a>
-                            <i class="nc-icon nc-diamond"></i>
+                            <i class="nc-icon nc-credit-card"></i>
                             <p>Petty Cash</p>
                         </a>
                     </router-link>
@@ -62,7 +62,7 @@
                 <li>
                  <router-link to="/sale">
                         <a>
-                            <i class="nc-icon nc-diamond"></i>
+                            <i class="nc-icon nc-basket"></i>
                             <p>Sale</p>
                         </a>
                     </router-link>
@@ -70,7 +70,7 @@
                 <li>
                     <router-link to="/reports">
                         <a>
-                            <i class="nc-icon nc-diamond"></i>
+                            <i class="nc-icon nc-chart-pie-36"></i>
                             <p>Reports</p>
                         </a>
                     </router-link>

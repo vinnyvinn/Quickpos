@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 
 class ReportsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT');
+    }
     public function index(Request $request)
     {
         $from = Carbon::parse($request->from)->startOfDay()->format('Y-m-d H:m:s');

@@ -10,6 +10,7 @@
                             :data="pos">
                             <i class="fa fa-file-excel-o" aria-hidden="true"></i> Download
                         </download-excel>
+                        <button class="btn btn-outline-danger" @click="back">Back</button>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped walla">
@@ -42,20 +43,28 @@
 
 <script>
     export default {
-        mounted(){
+        mounted() {
+            this.listen();
             this.initDatatable();
         },
-        computed:{
-            pos(){
+        computed: {
+            pos() {
                 return this.$store.state.pos;
             }
         },
-        methods:{
-            initDatatable(){
-                setTimeout(()=>{
+        methods: {
+            initDatatable() {
+                setTimeout(() => {
                     $('.walla').DataTable();
-                },300)
+                }, 300)
             },
+            listen() {
+                eventBus.$on('showPos', () => {
+                });
+            },
+            back() {
+                eventBus.$emit('backToPos');
+            }
         }
     }
 </script>

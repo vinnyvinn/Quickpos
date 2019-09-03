@@ -20,8 +20,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-
-        return response()->json(ProductsResource::collection(Product::all()));
+    return response()->json(ProductsResource::collection(Product::get()));
+        return response()->json(ProductsResource::collection(Product::get()));
     }
 
 
@@ -59,6 +59,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::find($id)->delete();
-        return response($id);
+         return response($id);
     }
 }

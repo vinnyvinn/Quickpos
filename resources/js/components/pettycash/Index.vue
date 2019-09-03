@@ -1,16 +1,15 @@
 <template>
-    <div class="content">
+    <div>
+        <add-new v-if="add_petty_cash" :edit="editing"></add-new>
+    <div class="content" v-if="!add_petty_cash">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
-
                     <div class="card-header">
-                       <button class="btn btn-primary" @click="add_petty_cash = true" v-if="!add_petty_cash">Add Pettycash</button>
+                       <button class="btn btn-primary" @click="add_petty_cash = true">Add Pettycash</button>
                          </div>
                     <div class="card-body">
-                        <add-new v-if="add_petty_cash" :edit="editing"></add-new>
-                        <div v-if="!add_petty_cash">
-                            <table class="table table-striped walla">
+                              <table class="table table-striped walla">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -74,15 +73,23 @@
                 eventBus.$on('addPettyCash',(petty) =>{
                     this.add_petty_cash = false;
                     this.tableData.unshift(petty);
+                    this.initDatatable();
                 });
                 eventBus.$on('updatePettyCash',(petty) =>{
                     this.add_petty_cash = false;
                     this.editing = false;
+                    for (let i=0;i<this.tableData.length;i++){
+                        if (this.tableData[i].id == petty.id){
+                            this.tableData.splice(i,1)
+                        }
+                    }
                     this.tableData.unshift(petty);
+                    this.initDatatable();
                 });
                 eventBus.$on('cancelPettyCash',() =>{
                     this.add_petty_cash = false;
                     this.editing = false;
+                    this.initDatatable();
                 })
             },
             editMode(cash){
@@ -90,11 +97,7 @@
                  .then(() =>{
                      this.add_petty_cash = true;
                      this.editing = true;
-                     for (let i=0;i<this.tableData.length;i++){
-                         if (this.tableData[i].id == cash.id){
-                             this.tableData.splice(i,1)
-                         }
-                     }
+
                  })
             }
         },

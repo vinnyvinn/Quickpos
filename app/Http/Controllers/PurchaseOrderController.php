@@ -20,17 +20,6 @@ class PurchaseOrderController extends Controller
     {
         return response()->json(PurchaseOrder::all());
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -39,30 +28,8 @@ class PurchaseOrderController extends Controller
      */
     public function store(Request $request)
     {
-        PurchaseOrder::create($request->all());
-        return response('success');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\PurchaseOrder  $purchaseOrder
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-       return response()->json( PurchaseOrder::find($id));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\PurchaseOrder  $purchaseOrder
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PurchaseOrder $purchaseOrder)
-    {
-        //
+        $po = PurchaseOrder::create($request->all());
+        return response($po);
     }
 
     /**
@@ -74,8 +41,8 @@ class PurchaseOrderController extends Controller
      */
     public function update(Request $request)
     {
-        PurchaseOrder::find($request->id)->update($request->all());
-        return response('success');
+         PurchaseOrder::find($request->id)->update($request->all());
+         return response()->json(PurchaseOrder::find($request->id));
     }
 
     /**

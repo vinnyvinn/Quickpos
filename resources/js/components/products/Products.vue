@@ -1,16 +1,16 @@
 <template>
-    <div class="content">
+    <div>
+        <add-product v-if="add_product" :edit="editing"></add-product>
+    <div class="content" v-if="!add_product">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                       <h4 class="card-title" v-if="!add_product">Products</h4>
-                       <button class="btn btn-primary" @click="add_product=true" v-if="!add_product">Add Product</button>
+                       <h4 class="card-title">Products</h4>
+                       <button class="btn btn-primary" @click="add_product=true">Add Product</button>
                     </div>
                     <div class="card-body">
-                        <add-product v-if="add_product" :edit="editing"></add-product>
-                        <div v-if="!add_product">
-                            <table class="table table-striped walla">
+                           <table class="table table-striped walla">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -57,17 +57,18 @@
         },
         created() {
          this.listen();
-         this.getCategories();
+         this.getProducts();
         },
         mounted(){
      this.initDatatable();
         },
         methods:{
-            getCategories(){
+               getProducts(){
                 axios.get('products')
                     .then(res => this.tableData = res.data)
-                    .catch(error => console.log(error.response))
+                    .catch(error => Exception.handle(error))
             },
+
             addProduct(){
                 this.$router.push('/add-product');
             },
@@ -91,10 +92,31 @@
                 eventBus.$on('listProducts',(product) =>{
                     this.tableData.unshift(product);
                     this.add_product =false;
+                    this.initDatatable();
                 });
                 eventBus.$on('cancel',()=>{
                     this.add_product = false;
                     this.editing = false;
+                });
+                eventBus.$on('updateProducts',(product)=>{
+                    this.add_product = false;
+                    this.editing = false;
+                    for (let i=0;i<this.tableData.length;i++){
+                        if (this.tableData[i].id == product.id){
+                            this.tableData.splice(i,1);
+                        }
+                    }
+                    this.tableData.unshift(product);
+                    this.initDatatable();
+                });
+                eventBus.$on('removeProducts',(ids) =>{
+                   ids.filter((item) =>{
+                       for (let i = 0;i<this.tableData.length;i++){
+                           if (this.tableData[i].id == item.id){
+                               this.tableData.splice(i,1);
+                              }
+                       }
+                   })
                 })
             },
             editMode(product){

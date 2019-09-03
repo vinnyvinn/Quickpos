@@ -31,7 +31,6 @@ Route::apiResource('orders','OrderController');
 Route::apiResource('purchases','PurchaseOrderController');
 Route::apiResource('petty-cash','PettyCashController');
 Route::apiResource('petty-cash-types','PettyCashTypeController');
-Route::post('update-po','PurchaseOrderController@update');
 Route::post('sales-report','ReportsController@index');
 Route::post('petty-cash-report','ReportsController@pettyCash');
 Route::post('po-report','ReportsController@po');

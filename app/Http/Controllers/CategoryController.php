@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index','show']]);
+        $this->middleware('JWT');
     }
     /**
      * Display a listing of the resource.
@@ -44,7 +44,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request)
     {
-        $category = Category::find($request->id)->update($request->all());
+        Category::find($request->id)->update($request->all());
         return  response()->json($request->all());
     }
 
@@ -56,8 +56,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-
-        Category::find($id)->delete();
-        return response($id);
+        $cate = Category::find($id);
+        $products = $cate->products;
+        $cate->products()->delete();
+        $cate->delete();
+        return response()->json(['category' => $cate,'products' => $products]);
     }
 }

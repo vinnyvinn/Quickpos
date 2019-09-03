@@ -48,7 +48,7 @@
           },
           update(){
               axios.patch(`categories/${this.editId}`,{id:this.editId,name:this.form.name})
-                  .then(res => eventBus.$emit('listCategories',res.data))
+                  .then(res => eventBus.$emit('updateCategory',res.data))
                   .catch(error => error.response)
           },
           cancel(){

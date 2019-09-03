@@ -1,15 +1,15 @@
 <template>
-    <div class="content">
+    <div>
+    <add-new v-if="add_type" :edit="editing"></add-new>
+    <div class="content" v-if="!add_type">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                       <button class="btn btn-primary" @click="add_type = true" v-if="!add_type">Add Pettycash Type</button>
+                       <button class="btn btn-primary" @click="add_type = true">Add Pettycash Type</button>
                     </div>
                     <div class="card-body">
-                        <add-new v-if="add_type" :edit="editing"></add-new>
-                        <div v-if="!add_type">
-                            <table class="table table-striped walla">
+                              <table class="table table-striped walla">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -55,7 +55,7 @@
             getPettyCashType(){
                 axios.get('petty-cash-types')
                     .then(res => this.tableData = res.data)
-                    .catch(error => console.log(error.response))
+                    .catch(error => Exception.handle(error))
             },
             addPettyCash(){
                this.$router.push('/add-type');
@@ -70,25 +70,29 @@
                 eventBus.$on('addType',(type)=>{
                     this.add_type = false;
                     this.tableData.unshift(type);
+                    this.initDatatable();
                 });
                 eventBus.$on('listType',(type) =>{
                    this.add_type = false;
                    this.editing = false;
+                    for (let i=0;i<this.tableData.length;i++){
+                        if (this.tableData[i].id == type.id){
+                           this.tableData.splice(i,1);
+                        }
+                    }
                    this.tableData.unshift(type);
+                    this.initDatatable();
                 });
                 eventBus.$on('cancelType',() =>{
                     this.add_type = false;
                     this.editing = false;
+                    this.initDatatable();
                 })
             },
             editMode(type){
                this.$store.dispatch('pettyCashType',type)
                    .then(() => {
-                       for (let i=0;i<this.tableData.length;i++){
-                           if (this.tableData[i].id == type.id){
-                              this.tableData.splice(i,1);
-                           }
-                       }
+
                        this.add_type = true;
                        this.editing = true;
                    })

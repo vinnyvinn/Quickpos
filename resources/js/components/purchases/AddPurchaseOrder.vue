@@ -4,7 +4,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">New PurchaseOrder</h4>
+                        <h4 class="card-title">{{edit_po ? 'Update PurchaseOrder' : 'New PurchaseOrder'}}</h4>
 
                     </div>
                     <div class="card-body">
@@ -23,6 +23,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-outline-danger" @click="cancel">Cancel</button>
 
                         </form>
                     </div>
@@ -34,21 +35,48 @@
 
 <script>
     export default {
+        props:['edit'],
      data(){
          return {
              form:{
                  name:'',
                  description:'',
                  price:''
-             }
+             },
+             edit_po:this.edit
          }
      },
+        created(){
+         this.listen();
+        },
         methods:{
                savePurchaseOrder(){
-                axios.post('purchases',this.form)
-                    .then(res => this.$router.push('/pos'))
+                   this.edit_po ? this.update() : this.save();
+                },
+            update(){
+                   let po =  {name:this.form.name,description:this.form.description,price:this.form.price,id:this.editId};
+                axios.patch(`purchases/${this.editId}`,po)
+                    .then(res =>{
+                        this.edit_po = false;
+                        eventBus.$emit('editPo',res.data)
+                    })
                     .catch(error => error.response)
-
+            },
+            save(){
+                axios.post('purchases',this.form)
+                    .then(res => eventBus.$emit('addPo',res.data))
+                    .catch(error => error.response)
+            },
+            listen(){
+                if (this.edit_po){
+                    this.form.name = this.$store.state.edit_po.name,
+                    this.form.description = this.$store.state.edit_po.description,
+                    this.form.price = this.$store.state.edit_po.price,
+                    this.editId = this.$store.state.edit_po.id
+                }
+            },
+            cancel(){
+                   eventBus.$emit('cancelPo');
             }
         }
     }

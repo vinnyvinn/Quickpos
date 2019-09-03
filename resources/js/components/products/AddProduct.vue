@@ -79,7 +79,7 @@
                 axios.patch(`products/${this.product_id}`,product)
                     .then(res => {
                         this.edit_product = false;
-                        eventBus.$emit('listProducts',res.data);
+                        eventBus.$emit('updateProducts',res.data);
                     })
                     .catch(error => error.response)
             },

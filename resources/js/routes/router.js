@@ -9,8 +9,6 @@ import ReceiveStock from "../components/inventory/ReceiveStock";
 import ViewOrder from "../components/ViewOrder";
 import AppReceipt from "../components/AppReceipt";
 import PurchaseOrder from "../components/purchases/PurchaseOrder";
-import AddPurchaseOrder from "../components/purchases/AddPurchaseOrder";
-import EditPurchaseOrder from "../components/purchases/EditPurchaseOrder";
 import Types from "../components/pettycash/types/Index";
 import BaseIndex from "../components/pettycash/BaseIndex";
 import BaseIndexProducts from "../components/products/BaseIndex";
@@ -43,8 +41,6 @@ const routes = [
     {path: '/order-details', component: ViewOrder, beforeEnter: guard},
     {path: '/print-receipt', component: AppReceipt, beforeEnter: guard},
     {path: '/pos', component: PurchaseOrder, beforeEnter: guard},
-    {path: '/add-po', component: AddPurchaseOrder, beforeEnter: guard},
-    {path: '/edit-po', component: EditPurchaseOrder, name: 'po-edit', beforeEnter: guard},
     {path: '/petty-cash', component: BaseIndex, beforeEnter: guard},
     {path: '/types', component: Types, beforeEnter: guard},
     {path: '/reports', component: Reports, beforeEnter: guard},

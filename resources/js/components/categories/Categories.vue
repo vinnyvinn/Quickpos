@@ -1,16 +1,16 @@
 <template>
-    <div class="content">
+    <div>
+    <add-category v-if="add_category" :edit="editing"></add-category>
+    <div class="content" v-if="!add_category">
         <div class="row">
             <div class="col-sm-12">
          <div class="card">
      <div class="card-header">
-         <h4 class="card-title" v-if="!add_category">Categories</h4>
-         <button class="btn btn-primary" @click="addCategory" v-if="!add_category">Add Category</button>
+         <h4 class="card-title">Categories</h4>
+         <button class="btn btn-primary" @click="add_category = true">Add Category</button>
            </div>
              <div class="card-body">
-                 <add-category v-if="add_category" :edit="editing"></add-category>
-             <div v-if="!add_category">
-                 <table class="table table-striped walla">
+                  <table class="table table-striped walla">
                      <thead>
                          <tr>
                          <th>#</th>
@@ -57,16 +57,19 @@
             getCategories(){
                 axios.get('categories')
                     .then(res => this.tableData = res.data)
-                    .catch(error => console.log(error.response))
+                    .catch(error => Exception.handle(error))
             },
             deleteCategory(id){
               axios.delete(`categories/${id}`)
                   .then(res => {
                       for (let i=0;i<this.tableData.length;i++){
-                          if (this.tableData[i].id == res.data){
+                          if (this.tableData[i].id == res.data.category.id){
                               this.tableData.splice(i,1);
-                          }
+                       }
                       }
+                      if (res.data.products.length){
+                       eventBus.$emit('removeProducts',res.data.products);
+                         }
                   })
                   .catch(error => error.response)
             },
@@ -79,23 +82,27 @@
                 eventBus.$on('listCategories',(category)=>{
                    this.add_category =false;
                    this.tableData.unshift(category);
+                   this.initDatatable();
                   });
-
                 eventBus.$on('allCategories',()=>{
                 this.add_category = false;
-                 })
-            },
-            addCategory(){
-                this.add_category = true;
                 this.editing = false;
-            },
-            editMode(category){
-               for (let i=0;i<this.tableData.length;i++){
-                   if (this.tableData[i].id == category.id){
-                      this.tableData.splice(i,1);
+                this.initDatatable();
+                 });
+               eventBus.$on('updateCategory',(category)=>{
+                   this.add_category = false;
+                   this.editing = false;
+                   for (let i=0;i<this.tableData.length;i++){
+                       if (this.tableData[i].id == category.id){
+                        this.tableData.splice(i,1);
+                       }
                    }
-               }
-               this.$store.dispatch('updateCategory',category)
+                   this.tableData.unshift(category);
+                   this.initDatatable();
+               });
+            },
+                editMode(category){
+                   this.$store.dispatch('updateCategory',category)
                    .then(()=> {
                        this.add_category = true;
                        this.editing = true;

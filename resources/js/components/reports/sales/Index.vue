@@ -10,6 +10,7 @@
                             :data="sales">
                             <i class="fa fa-file-excel-o" aria-hidden="true"></i> Download
                         </download-excel>
+                        <button class="btn btn-outline-danger" @click="back">Back</button>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped walla">
@@ -25,7 +26,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                               <tr v-for="sale in sales">
+                            <tr v-for="sale in sales">
                                 <td>{{sale.id}}</td>
                                 <td>{{sale.product}}</td>
                                 <td>{{sale.category}}</td>
@@ -33,7 +34,7 @@
                                 <td>{{sale.quantity}}</td>
                                 <td>{{sale.total | currency}}</td>
                                 <td>{{sale.created}}</td>
-                              </tr>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -46,21 +47,30 @@
 
 <script>
     export default {
-        mounted(){
-          this.initDatatable();
+        mounted() {
+            this.initDatatable();
         },
-        computed:{
-          sales(){
-              return this.$store.state.sales;
-          }
+        created() {
+            this.listen();
         },
-        methods:{
-                initDatatable(){
-                setTimeout(()=>{
+        computed: {
+            sales() {
+             return this.$store.state.sales;
+            }
+        },
+        methods: {
+            initDatatable() {
+                setTimeout(() => {
                     $('.walla').DataTable();
-                },300)
+                }, 300)
             },
-
+            listen() {
+                eventBus.$on('salesReports', () => {
+                })
+            },
+            back() {
+                eventBus.$emit('backToSales');
+            }
         }
     }
 </script>
