@@ -25,21 +25,22 @@
 
 <script>
     export default {
+        props:['categor_id'],
         data(){
             return{
                 dishes:[],
                 item:'item.png'
             }
         },
-
         created(){
-
-            this.getDishes();
+         this.getDishes();
         },
         methods:{
             getDishes(){
-                axios.get('drinks')
-                    .then(res => this.dishes = res.data)
+                axios.get(`get-products/${this.categor_id}`)
+                    .then(res => {
+                         this.dishes = res.data
+                    })
                     .catch(error => error.response)
             },
             addProductToCart(product,quantity){
@@ -47,7 +48,7 @@
                     product:product,
                     quantity:quantity,
                     available_qty:product.quantity
-                }).then(res => console.log('success'));
+                });
             },
         }
     }

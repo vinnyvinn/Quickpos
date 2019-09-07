@@ -9,38 +9,19 @@
                         </h4>
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="pills-main-tab" data-toggle="pill" href="#pills-main" role="tab" aria-controls="pills-main" aria-selected="true">Main Dish</a>
+                                <a class="nav-link active" :id="'pills-'+category.id+'-tab'" data-toggle="pill" :href="'#pills-'+category.id" role="tab" :aria-controls="'pills-'+category.id" aria-selected="true">{{category.name}}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-drinks-tab" data-toggle="pill" href="#pills-drinks" role="tab" aria-controls="pills-drinks" aria-selected="false">Drinks</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-fruits-tab" data-toggle="pill" href="#pills-fruits" role="tab" aria-controls="pills-fruits" aria-selected="false">Fruits</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-snacks-tab" data-toggle="pill" href="#pills-snacks" role="tab" aria-controls="pills-snacks" aria-selected="false">Snacks</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-specials-tab" data-toggle="pill" href="#pills-specials" role="tab" aria-controls="pills-specials" aria-selected="false">Specials</a>
+                            <li class="nav-item" v-for="cat in categories" :key="cat.id">
+                                <a class="nav-link" :id="'pills-'+cat.id+'-tab'" data-toggle="pill" :href="'#pills-'+cat.id" role="tab" :aria-controls="'pills-'+cat.id" aria-selected="false">{{cat.name}}</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-main" role="tabpanel" aria-labelledby="pills-main-tab">
-                                <main-dish></main-dish>
+                            <div class="tab-pane fade show active" :id="'pills-'+category.id" role="tabpanel" :aria-labelledby="'pills-'+category.id+'-tab'">
+                              <app-drinks :categor_id="1"></app-drinks>
                             </div>
-                            <div class="tab-pane fade" id="pills-drinks" role="tabpanel" aria-labelledby="pills-drinks-tab">
-                                <app-drinks></app-drinks>
-                            </div>
-                            <div class="tab-pane fade" id="pills-fruits" role="tabpanel" aria-labelledby="pills-fruits-tab">
-                                <app-fruits></app-fruits>
-                            </div>
-                            <div class="tab-pane fade" id="pills-snacks" role="tabpanel" aria-labelledby="pills-snacks-tab">
-                                <app-snacks></app-snacks>
-                            </div>
-                            <div class="tab-pane fade" id="pills-specials" role="tabpanel" aria-labelledby="pills-specials-tab">
-                                <app-specials></app-specials>
-                            </div>
-
+                              <div class="tab-pane fade" v-for="prod in all_products" :id="'pills-'+prod.category_id" role="tabpanel" :aria-labelledby="'pills-'+prod.name+'-tab'">
+                                <main-dish :cat_id="prod.category_id"></main-dish>
+                               </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -54,35 +35,56 @@
 
 <script>
     import MainDish from "./dishes/MainDish";
-    import Fruits from "./dishes/Fruits";
-    import Specials from "./dishes/Specials";
-    import Snacks from "./dishes/Snacks";
     import Drinks from "./dishes/Drinks";
     import { mapGetters } from 'vuex';
 
     export default {
+        data(){
+            return {
+                categories: {},
+                category: {},
+                all_products: {}
+            }
+        },
           computed:{
              ...mapGetters(['cartItems'])
-
          },
-
         components:{
             'main-dish':MainDish,
-            'app-fruits':Fruits,
-            'app-specials':Specials,
-            'app-snacks':Snacks,
             'app-drinks':Drinks
         },
-        created(){
-           eventBus.$on('notify',()=>{
-               this.$toastr.e("Sorry you do not have enough stock for the selected product");
-           })
+         created(){
+            this.getCategories();
+            this.getCategory();
+            this.allProducts();
+            this.listen();
            },
         methods:{
             viewCart(){
             this.$router.push('/order-details')
-
             },
+            getCategories(){
+                axios.get('all-categories')
+                    .then(res => this.categories = res.data)
+                    .catch(error =>Exception.handle(error))
+            },
+            getCategory(){
+                axios.get('categories/1')
+                    .then(res => {
+                        this.category = res.data
+                        })
+                    .catch(error => Exception.handle(error))
+            },
+            allProducts(){
+                axios.get('all-products')
+                    .then(res => this.all_products = res.data)
+                    .catch(error => Exception.handle(error));
+            },
+            listen(){
+                eventBus.$on('notify',()=>{
+                    this.$toastr.e("Sorry you do not have enough stock for the selected product");
+                })
+            }
            }
     }
 </script>

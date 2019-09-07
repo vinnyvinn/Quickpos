@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,11 @@ class DishesController extends Controller
         return response()->json(Product::where('category_id',1)->get());
     }
 
+    public function show($id)
+    {
+      $category = Category::first();
+      return response()->json(Product::where('category_id',$category->id));
+     }
     public function drinks()
     {
         return response()->json(Product::where('category_id',2)->get());

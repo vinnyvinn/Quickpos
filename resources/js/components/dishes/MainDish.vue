@@ -23,8 +23,9 @@
 </template>
 
 <script>
-    import { eventBus } from '../../app';
+
     export default {
+        props:['cat_id'],
         data(){
             return{
                 dishes:[],
@@ -55,11 +56,12 @@
 
         },
     created(){
+
          this.getDishes();
     },
         methods:{
             getDishes(){
-             axios.get('dishes')
+             axios.get(`get-products/${this.cat_id}`)
                  .then(res => this.dishes = res.data)
                 .catch(error => error.response)
             },
@@ -68,7 +70,7 @@
                     product:product,
                     quantity:quantity,
                     available_qty:product.quantity
-                }).then(res => console.log('success'));
+                });
             },
             }
     }

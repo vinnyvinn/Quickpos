@@ -1,8 +1,5 @@
 <template>
     <div class="sidebar" data-color="white" data-active-color="danger">
-        <!--
-          Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-      -->
         <div class="logo">
             <a href="#" class="simple-text logo-mini">
                 <div class="logo-image-small">
@@ -10,10 +7,7 @@
                 </div>
             </a>
             <a href="#" class="simple-text logo-normal">
-                Vinnysoft solutions
-                <!-- <div class="logo-image-big">
-                  <img src="../assets/img/logo-big.png">
-                </div> -->
+              Vinnysoft Solutions
             </a>
         </div>
         <div class="sidebar-wrapper">
@@ -26,12 +20,28 @@
                        </a>
                    </router-link>
                 </li>
-
                 <li>
                     <router-link to="/products">
                         <a>
                             <i class="nc-icon nc-layout-11"></i>
                             <p>Products</p>
+                        </a>
+                    </router-link>
+                </li>
+
+                <li>
+                    <router-link to="/suppliers">
+                        <a>
+                            <i class="nc-icon nc-layout-11"></i>
+                            <p>Suppliers</p>
+                        </a>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/customers">
+                        <a>
+                            <i class="nc-icon nc-layout-11"></i>
+                            <p>Customers</p>
                         </a>
                     </router-link>
                 </li>
@@ -63,7 +73,7 @@
                  <router-link to="/sale">
                         <a>
                             <i class="nc-icon nc-basket"></i>
-                            <p>Sale</p>
+                            <p>Order</p>
                         </a>
                     </router-link>
                 </li>
@@ -99,10 +109,8 @@
             'app-products':Products,
             'app-categories':Categories,
             'app-dashboard':Dashboard
-        },
-        created(){
-            console.log('yttttttttt');
-        },
+        }
+
     }
 </script>
 

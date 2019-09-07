@@ -24,7 +24,15 @@ class ProductController extends Controller
         return response()->json(ProductsResource::collection(Product::get()));
     }
 
+    public function allProducts()
+    {
+        return response()->json(Product::whereNotIn('category_id',[Category::first()->id])->get());
+}
 
+    public function getProducts($id)
+    {
+       return response()->json(Product::where('category_id',$id)->get());
+}
     /**
      * Store a newly created resource in storage.
      *

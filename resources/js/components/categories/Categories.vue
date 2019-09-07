@@ -24,7 +24,7 @@
                      <td>{{category.name}}</td>
                         <td>
                          <button class="btn btn-info btn-sm" @click="editMode(category)"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                         <button class="btn btn-danger btn-sm" @click="deleteCategory(category.id)"><i class="fa fa-trash"></i></button>
+                         <button class="btn btn-danger btn-sm" @click="deleteCategory(category.id)" v-if="category.id !=1"><i class="fa fa-trash"></i></button>
                      </td>
                  </tr>
                  </tbody>

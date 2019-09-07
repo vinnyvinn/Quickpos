@@ -8,6 +8,12 @@ class Exception {
         if (error == 'Token is Expired'){
             User.logout();
         }
+        if (error == 'Invalid Token'){
+            User.logout();
+        }
+        if (error=='Unauthorized'){
+           eventBus.$emit('invalidCredentials');
+        }
 
     }
 

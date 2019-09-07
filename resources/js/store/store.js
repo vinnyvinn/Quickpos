@@ -18,7 +18,9 @@ export default new Vuex.Store({
         product:{},
         petty_cash_type:{},
         edit_petty_cash:{},
-        edit_po:{}
+        edit_po:{},
+        supplier:{},
+        customer:{}
 
     },
     getters: {
@@ -51,6 +53,7 @@ export default new Vuex.Store({
         orderedItems(state) {
             return state.cart.items;
         },
+
     },
     mutations: {
         addProductToCart: (state, payload) => {
@@ -96,15 +99,21 @@ export default new Vuex.Store({
         updateProduct(state,data){
             state.product = data;
         },
+            updatePo(state,data){
+            state.edit_po = data;
+        },
+        updateSupplier(state,data){
+            state.supplier = data;
+        },
         pettyCashType(state,data){
             state.petty_cash_type = data;
         },
         pettyCashUpdate(state,data){
-         state.petty_cash = data;
+            state.petty_cash = data;
         },
-        updatePo(state,data){
-            state.edit_po = data;
-        },
+        updateCustomer(state,data){
+           state.customer = data;
+        }
     },
     actions: {
         addProductToCart({commit, getters}, payload) {
@@ -172,16 +181,21 @@ export default new Vuex.Store({
         updateProduct({commit},data){
             commit('updateProduct',data);
         },
+           updatePo({commit},data){
+            commit('updatePo',data);
+        },
         pettyCashType({commit},data){
             commit('pettyCashType',data);
         },
         pettyCashUpdate({commit},data){
             commit('pettyCashUpdate',data);
         },
-        updatePo({commit},data){
-            commit('updatePo',data);
+        updateSupplier({commit},data){
+            commit('updateSupplier',data);
         },
-
+        updateCustomer({commit},data){
+            commit('updateCustomer',data);
+        }
 
     },
 })

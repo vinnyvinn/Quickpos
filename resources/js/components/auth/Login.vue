@@ -46,7 +46,8 @@
             }
         },
         created(){
-            if (User.loggedIn()){
+                this.listen();
+                if (User.loggedIn()){
                 this.$router.push('/sale');
             }
         },
@@ -57,6 +58,14 @@
             goRegister(){
                 console.log('here now')
                 //this.$router.push('/signup')
+            },
+            listen(){
+                eventBus.$on('invalidCredentials',()=>{
+                    this.$toastr.w('Sorry,You entered invalid credentials.');
+                });
+                eventBus.$on('invalidTokens',()=>{
+                    this.$toastr.w('Sorry,Your token is valid.')
+                });
             }
         }
     }

@@ -23,6 +23,15 @@ class CategoryController extends Controller
         return response()->json(Category::all());
     }
 
+    public function show($id)
+    {
+        return response()->json(Category::first());
+    }
+
+    public function allCategories()
+    {
+        return response()->json(Category::whereNotIn('id',[Category::first()->id])->get());
+  }
      /**
      * Store a newly created resource in storage.
      *

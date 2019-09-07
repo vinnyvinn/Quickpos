@@ -19,8 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('categories','CategoryController');
 Route::apiResource('products','ProductController');
-Route::get('dishes','ProductController@dishes');
-Route::get('/dishes','DishesController@index');
+Route::apiResource('dishes','DishesController');
+Route::get('/all-categories','CategoryController@allCategories');
+Route::get('/all-products','ProductController@allProducts');
+Route::get('/get-products/{category_id}','ProductController@getProducts');
 Route::get('/drinks','DishesController@drinks');
 Route::get('/fruits','DishesController@fruits');
 Route::get('/snacks','DishesController@snacks');
@@ -33,6 +35,8 @@ Route::apiResource('petty-cash','PettyCashController');
 Route::apiResource('petty-cash-types','PettyCashTypeController');
 Route::post('sales-report','ReportsController@index');
 Route::post('petty-cash-report','ReportsController@pettyCash');
+Route::apiResource('suppliers','SuppliersController');
+Route::apiResource('customers','CustomersController');
 Route::post('po-report','ReportsController@po');
 
 

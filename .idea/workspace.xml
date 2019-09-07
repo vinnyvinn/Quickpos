@@ -3,34 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="801b1eee-c859-4021-ba38-bcfd25e36853" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DishesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DishesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PurchaseOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PurchaseOrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ProductsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductsResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_08_070506_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_08_070506_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/categories/AddCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/categories/AddCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Helpers/Exception.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Helpers/Exception.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Helpers/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Helpers/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AppSale.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AppSale.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/auth/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/categories/Categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/categories/Categories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Drinks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/Drinks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Fruits.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/MainDish.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dishes/MainDish.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Snacks.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dishes/Specials.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/layout/AppSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layout/AppSidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/layout/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layout/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/pettycash/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pettycash/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/pettycash/types/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pettycash/types/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/products/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/AddProduct.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/products/Products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/Products.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/purchases/AddPurchaseOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/purchases/AddPurchaseOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/purchases/EditPurchaseOrder.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/purchases/PurchaseOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/purchases/PurchaseOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/pettycash/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/reports/pettycash/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/pettycash/PettyCash.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/reports/pettycash/PettyCash.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/po/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/reports/po/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/po/PurchaseOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/reports/po/PurchaseOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/sales/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/reports/sales/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/sales/Sales.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/reports/sales/Sales.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/reports/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/pettycash/Index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/reports/pettycash/PettyCash.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,26 +167,26 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tutorials/realtimeApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/reports" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/components/reports" />
+      <recent name="$PROJECT_DIR$/resources/js/components" />
+      <recent name="$PROJECT_DIR$/public/assets/images" />
+      <recent name="$PROJECT_DIR$/resources/js" />
+      <recent name="$PROJECT_DIR$/public/assets/js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/fonts" />
       <recent name="$PROJECT_DIR$/public/assets/css" />
       <recent name="$PROJECT_DIR$/resources/js/components/reports/po" />
       <recent name="$PROJECT_DIR$/resources/js/components/reports/pettycash" />
       <recent name="$PROJECT_DIR$/resources/js/components/reports/sales" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/assets/images" />
-      <recent name="$PROJECT_DIR$/resources/js" />
-      <recent name="$PROJECT_DIR$/public/assets/js" />
-      <recent name="$PROJECT_DIR$/public/assets/css" />
-      <recent name="$PROJECT_DIR$/public/assets/fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -270,6 +264,12 @@
       <workItem from="1567397421536" duration="19135000" />
       <workItem from="1567433031155" duration="839000" />
       <workItem from="1567485151152" duration="8969000" />
+      <workItem from="1567590651330" duration="6953000" />
+      <workItem from="1567598816578" duration="372000" />
+      <workItem from="1567660176434" duration="15454000" />
+      <workItem from="1567693316924" duration="3545000" />
+      <workItem from="1567744970093" duration="2700000" />
+      <workItem from="1567836029190" duration="3789000" />
     </task>
     <servers />
   </component>
@@ -296,6 +296,11 @@
           <url>file://$PROJECT_DIR$/resources/js/components/auth/Login.vue</url>
           <line>10</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/routes/api.php</url>
+          <line>22</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

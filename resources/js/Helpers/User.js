@@ -4,9 +4,9 @@ class User {
     login(data){
         axios.post('/auth/login',data)
             .then(res => {
-                this.responseAfterLogin(res);
+               this.responseAfterLogin(res);
             })
-            .catch(error => console.log(error.response.data))
+          .catch(error =>Exception.handle(error))
     }
     responseAfterLogin(res){
         const access_token = res.data.access_token;
@@ -29,7 +29,7 @@ class User {
     }
     logout(){
         AppStorage.clear();
-        window.location ='/login';
+         window.location ='/login';
     }
     name(){
         if(this.loggedIn()){
